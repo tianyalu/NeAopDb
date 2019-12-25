@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements DBOperation{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //代理
         db = (DBOperation) Proxy.newProxyInstance(DBOperation.class.getClassLoader(),
                 new Class[]{DBOperation.class}, new DBHandler(this));
 
